@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Letter recognition</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+        integrity="shq384-WshaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhkt8"
+        crossorigin="anonymous">
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    </head>
+    <body>
+        <main>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p><h2>Letter Recognition</h2></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12 text-center alert alert-danger">
+                        <p><h6><strong>No Input Given and Cavas Empty</strong></h6></p>
+                    </div>
+                    <hr>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="progress progress-bar progress-bar-striped progress-bar-animated mb-2">Loading Model</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                <div class="col-5"></div>
+                    <div class="col-4">
+                        <input id = "image-selector" class = "form-control form-control-lg border-0" type="file">
+                    </div>
+                <div class="col-3"></div>
+                </div>
+                <hr>
+                
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p><h4>OR Draw Below</h4></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center">
+                    <div id="canvas_box" class="col-12 ">
+                    </div>
+                </div>
+                <hr>
+                <div class = "row">
+                    <div class="col-6 text-right">
+                        <button id="predict-button" class="btn btn-dark ">Predict</button>
+                    </div>
+                    <div class="col-6 text-left">
+                        <button id="clear canvas" class="btn btn-danger" onclick="clearCanvas(this.id); clearImage();">Clear</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <h2 >Predictions</h2>
+                        <div id="predictions-list"></div>
+                        <hr>
+                        <div id="predictions-list1"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="select col-12">
+                        <h2 class="ml-3">Selected Image</h2>
+                        <img id="selected-image" class="ml-3" src=""/>
+                    </div>
+                    <!-- <div class="canvas col-6">
+                        <h2 class="ml-3">Canvas Image</h2>
+                        <img id="selected-image1" class="ml-3" src=""/>
+                    </div> -->
+                </div>
+                <div class="row">
+                    <div class="select2 col-6">
+                        <h2 class="ml-3">Selected Image</h2>
+                        <img id="selected-image2" class="ml-3" src=""/>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+        <script src="classes.js"></script>
+        <script src="predict.js"></script>
+        <script src="opencv.js"></script>
+        <script src="canvas.js"></script>
+    </body>
+</html>
